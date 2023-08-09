@@ -10,8 +10,12 @@ app.engine("jsx",require("express-react-views").createEngine())
 app.get('/greeting/:name',(req,res)=>{
     res.send(`Hello, ${req.params.name}`)
 })
-app.get('/typ',(req,res)=>{
-    res.send(``)
+app.get('/tip',(req,res)=>{
+    let newTotal = parseInt(req.query.total)
+    let newTip = parseInt(req.query.tipPercentage)
+    let tipAmount = (newTotal/(100/newTip))
+    console.log(newTip)
+    res.send(`${tipAmount}`)
 })
 
 
