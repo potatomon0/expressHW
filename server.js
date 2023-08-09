@@ -10,7 +10,9 @@ app.engine("jsx",require("express-react-views").createEngine())
 app.get('/greeting/:name',(req,res)=>{
     res.send(`Hello, ${req.params.name}`)
 })
-
+app.get('/typ',(req,res)=>{
+    res.send(``)
+})
 
 
 
